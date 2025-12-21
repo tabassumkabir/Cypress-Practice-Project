@@ -29,13 +29,25 @@ describe('login', ()=>{
 
         //click on User role
         cy.contains('Select').should('be.visible').click()
-        cy.wait(6000)
+        cy.wait(2000)
 
         //to select 'Admin' using keyboard downarrows
         cy.focused().type('{downarrow}{enter}') 
-        //select admin
+        
+        //select ESS
         //cy.contains('ESS').click()
-        cy.wait(5000)
+        cy.wait(2000)
+
+        //type employee name 
+        cy.get("input[placeholder='Type for hints...']").type('Test employee')
+
+        //find status
+        cy.contains('Select').should('be.visible').click()
+
+        //select status : enabled
+        cy.focused().type('{downarrow}{enter}')
+
+       
 
         
 
