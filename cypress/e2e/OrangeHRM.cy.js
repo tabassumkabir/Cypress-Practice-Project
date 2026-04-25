@@ -39,7 +39,10 @@ describe('login', ()=>{
         cy.wait(2000)
 
         //type employee name 
-        cy.get("input[placeholder='Type for hints...']").type('Test employee')
+        cy.get("input[placeholder='Type for hints...']").type('t')
+        cy.wait(3000)
+        //select the first one using keyboard downarrow
+        cy.focused().type("{downarrow}{enter}")
 
         //find status
         cy.contains('Select').should('be.visible').click()
@@ -47,6 +50,34 @@ describe('login', ()=>{
         //select status : enabled
         cy.focused().type('{downarrow}{enter}')
 
+
+        //find and type username 
+
+        const username = `user_${Math.floor(Math.random() * 100000)}`//this will create random username everytime 
+        cy.contains('Username')
+        .parents(".oxd-input-group")
+        .find('input')
+        .type(username)
+
+
+        //find and type password 
+        cy.contains('Password')
+        .parents('.oxd-input-group')
+        .find('input')
+        .type('TestEmployee123@')
+
+        //find and type confirm password 
+        cy.contains('Confirm Password')
+        .parents('.oxd-input-group')
+        .find('input')
+        .type('TestEmployee123@')
+
+        //click on save 
+        cy.get("[type='submit']").click()
+
+        cy.wait(6000)
+
+    
        
 
         
