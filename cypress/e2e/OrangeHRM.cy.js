@@ -77,6 +77,24 @@ describe('login', ()=>{
 
         cy.wait(6000)
 
+        //click on PM 
+        cy.contains('PIM').click()
+        cy.wait(3000)
+
+        //type employee name 
+        cy.xpath("(//input[@placeholder='Type for hints...'])[1]").type('alibaba')
+        cy.wait(3000)
+        cy.focused().type('{downarrow}{enter}')
+
+        //click on search 
+        cy.get("button[type='submit']").click()
+
+        //click on edit on search result
+        cy.xpath("(//button[@type='button'])[6]").click()
+        cy.wait(4000)
+
+
+
     
        
 

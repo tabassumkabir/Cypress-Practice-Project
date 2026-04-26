@@ -18,5 +18,8 @@
   "homepage": "https://github.com/tabassumkabir/Cypress-Practice-Project#readme",
   "dependencies": {
     "cypress": "^15.7.0"
+  },
+  "devDependencies": {
+    "cypress-xpath": "^2.0.1"
   }
 }
