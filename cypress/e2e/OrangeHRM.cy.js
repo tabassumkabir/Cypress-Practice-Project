@@ -1,3 +1,5 @@
+
+
 describe('login', ()=>{
 
     const URL = 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'
@@ -92,6 +94,27 @@ describe('login', ()=>{
         //click on edit on search result
         cy.xpath("(//button[@type='button'])[6]").click()
         cy.wait(4000)
+
+        //click on configuration 
+        cy.contains('Configuration').click()
+        
+        //select optional fields 
+        cy.contains('Optional Fields').click()
+
+        //turn the first toggle on 
+        cy.xpath("(//span[@class='oxd-switch-input oxd-switch-input--active --label-right'])[1]").click()
+
+        //click on save 
+        cy.xpath("(//button[@type='submit'])[1]").click()
+
+        //click on Add employee 
+        cy.contains('Add Employee').click()
+        cy.wait(3000)
+
+        //click on the + icon to upload image .
+       cy.get("input[type='file']").selectFile('cypress/fixtures/randompic.jpg', { force: true })
+
+
 
 
 
