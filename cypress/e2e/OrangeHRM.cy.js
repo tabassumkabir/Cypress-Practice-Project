@@ -79,7 +79,7 @@ describe('login', ()=>{
 
         cy.wait(6000)
 
-        //click on PM 
+        //click on PIM 
         cy.contains('PIM').click()
         cy.wait(3000)
 
